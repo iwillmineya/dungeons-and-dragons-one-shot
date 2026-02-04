@@ -199,13 +199,45 @@
         <section>
             <h2>⚔️ Who You're Going to Be Fighting</h2>
             <div style="background-color: rgba(20, 20, 20, 0.8); padding: 1.5rem; border: 1px solid #8b4513; border-radius: 4px; margin-top: 1rem;">
-                <div style="margin-bottom: 1.5rem;">
-                    <h3 style="color: #ffd700; margin-bottom: 0.5rem;">Enemy/Encounter 1</h3>
-                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
-                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
-                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
-                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
-                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                <div style="margin-bottom: 1.5rem; background-color: rgba(0, 0, 0, 0.5); padding: 1rem; border-radius: 4px; border-left: 3px solid #ffd700;">
+                    <h3 style="color: #ffd700; margin-bottom: 1rem;">Enemy/Encounter 1: Aboleth</h3>
+                    <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Type:</strong> Large Aberration, Lawful Evil</p>
+                    <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>CR:</strong> 10 (5,900 XP)</p>
+                    <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>HP:</strong> 135 (18d10 + 36)</p>
+                    <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 1rem;"><strong>AC:</strong> 17 (natural armor)</p>
+
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background-color: rgba(139, 69, 19, 0.2); border-radius: 3px; font-size: 0.85rem;">
+                        <p style="color: #d4a574; margin-bottom: 0.5rem;"><strong>Speed:</strong> 10 ft., swim 40 ft. | <strong>Proficiency Bonus:</strong> +4</p>
+                        <p style="color: #d4a574;"><strong>Senses:</strong> Darkvision 120 ft., Passive Perception 20 | <strong>Languages:</strong> Deep Speech, Telepathy 120 ft.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background-color: rgba(139, 69, 19, 0.2); border-radius: 3px;">
+                        <h4 style="color: #d4a574; font-size: 0.95rem; margin-bottom: 0.5rem;">Ability Scores</h4>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.25rem;">STR 21 (+5) | DEX 9 (-1) | CON 15 (+2) | INT 18 (+4) | WIS 15 (+2) | CHA 18 (+4)</p>
+                        <p style="color: #bbb; font-size: 0.85rem;">Saves: CON +6, INT +8, WIS +6 | Skills: History +12, Perception +10</p>
+                    </div>
+
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background-color: rgba(139, 69, 19, 0.2); border-radius: 3px;">
+                        <h4 style="color: #d4a574; font-size: 0.95rem; margin-bottom: 0.5rem;">Traits</h4>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Amphibious:</strong> Can breathe air and water.</p>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Mucous Cloud:</strong> Surrounded by transformative mucus. Creatures touching it or hitting within 5 ft. must make DC 14 Con save or become diseased for 1d4 hours, breathing only underwater.</p>
+                        <p style="color: #bbb; font-size: 0.85rem;"><strong>Probing Telepathy:</strong> If a creature communicates telepathically, the aboleth learns its greatest desires.</p>
+                    </div>
+
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background-color: rgba(139, 69, 19, 0.2); border-radius: 3px;">
+                        <h4 style="color: #d4a574; font-size: 0.95rem; margin-bottom: 0.5rem;">Actions</h4>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Multiattack:</strong> Makes three tentacle attacks.</p>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Tentacle:</strong> +9 to hit, reach 10 ft. Hit: 12 (2d6 + 5) bludgeoning. Target must make DC 14 Con save or become diseased. Diseased creature can't regain HP unless underwater. Disease removed only by Heal or 6th level+ cure magic.</p>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Tail:</strong> +9 to hit, reach 10 ft. Hit: 15 (3d6 + 5) bludgeoning.</p>
+                        <p style="color: #bbb; font-size: 0.85rem;"><strong>Enslave (3/Day):</strong> Target within 30 ft. must make DC 14 Wis save or be charmed. Charmed creature is under aboleth's control, can't take reactions. Charmed target can repeat save when taking damage or at 1 mile distance (once/24 hrs).</p>
+                    </div>
+
+                    <div style="padding: 0.75rem; background-color: rgba(139, 69, 19, 0.2); border-radius: 3px;">
+                        <h4 style="color: #d4a574; font-size: 0.95rem; margin-bottom: 0.5rem;">Legendary Actions (3 per round)</h4>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Detect:</strong> Makes a Wisdom (Perception) check.</p>
+                        <p style="color: #bbb; font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Tail Swipe:</strong> Makes one tail attack.</p>
+                        <p style="color: #bbb; font-size: 0.85rem;"><strong>Psychic Drain (Costs 2 Actions):</strong> One charmed creature takes 10 (3d6) psychic damage; aboleth regains HP equal to damage dealt.</p>
+                    </div>
                 </div>
                 <div>
                     <h3 style="color: #ffd700; margin-bottom: 0.5rem;">Enemy/Encounter 2</h3>
