@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheets - D&D Campaign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #daa520;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #f0e68c;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #daa520;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #daa520;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #2a2a2a;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #daa520;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8b4513;
+            padding-bottom: 0.5rem;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .character-card {
+            background-color: rgba(20, 20, 20, 0.8);
+            padding: 1.5rem;
+            border-left: 4px solid #daa520;
+            border-radius: 4px;
+            border: 1px solid #8b4513;
+        }
+
+        .character-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .character-info {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 0.75rem;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #daa520;
+        }
+
+        .character-info p {
+            color: #bbb;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin: 1rem 0;
+            background-color: rgba(31, 77, 122, 0.2);
+            padding: 0.75rem;
+            border-radius: 3px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #d4a574;
+            margin-bottom: 0.25rem;
+            font-weight: bold;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            color: #7db8d4;
+            font-weight: bold;
+        }
+
+        .subsection {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: rgba(31, 77, 122, 0.2);
+            border-radius: 3px;
+        }
+
+        .subsection-title {
+            color: #7db8d4;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .subsection-content {
+            color: #bbb;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #daa520;
+            margin-top: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>👥 Character Sheets</h1>
+        <p>Create and Manage Your Adventurers</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="beyt-charith.html">Beyt Charith</a>
+        <a href="#characters">Characters</a>
+    </nav>
+
+    <div class="container">
+        <section id="characters">
+            <h2>👥 Party Members</h2>
+            <p>Fill in your character details below. These sheets will help track your party's abilities and progress throughout the campaign.</p>
+            
+            <div class="character-grid">
+                <!-- Character 1 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+
+                <!-- Character 2 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+
+                <!-- Character 3 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+
+                <!-- Character 4 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+
+                <!-- Character 5 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+
+                <!-- Character 6 -->
+                <div class="character-card">
+                    <h3>[Character Name]</h3>
+                    
+                    <div class="character-info">
+                        <p><strong>Player:</strong> [Player Name]</p>
+                        <p><strong>Race & Class:</strong> [Race and Class]</p>
+                        <p><strong>Alignment:</strong> [Alignment]</p>
+                    </div>
+
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-label">STR</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">DEX</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CON</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">INT</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">WIS</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">CHA</div>
+                            <div class="stat-value">10</div>
+                        </div>
+                    </div>
+
+                    <div class="character-info">
+                        <p><strong>AC:</strong> 15 | <strong>HP:</strong> 20 | <strong>Speed:</strong> 30 ft.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Skills & Features</div>
+                        <div class="subsection-content">[Add skills and class features]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Equipment</div>
+                        <div class="subsection-content">[Add weapons, armor, and items]</div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">Personality & Background</div>
+                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Tylers D&D Campaign | May your rolls be ever in your favor!</p>
+    </footer>
+</body>
+</html>

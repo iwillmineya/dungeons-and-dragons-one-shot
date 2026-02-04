@@ -18,6 +18,13 @@
             line-height: 1.6;
         }
 
+        body.blurred header,
+        body.blurred nav,
+        body.blurred .container {
+            filter: blur(5px);
+            pointer-events: none;
+        }
+
         header {
             background: linear-gradient(135deg, #d4a574 0%, #e6b66d 100%);
             padding: 2rem;
@@ -131,10 +138,105 @@
             section {
                 padding: 1rem;
             }
+
+            .welcome-modal {
+                margin: 1rem;
+                padding: 2rem;
+            }
+
+            .welcome-modal h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .welcome-overlay.hidden {
+            display: none;
+        }
+
+        .welcome-modal {
+            background: linear-gradient(135deg, #d4a574 0%, #e6b66d 100%);
+            padding: 4rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 700px;
+            border: 4px solid #cd853f;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .welcome-modal h1 {
+            font-size: 2.8rem;
+            color: #8b4513;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .welcome-modal p {
+            font-size: 1.5rem;
+            color: #704214;
+            margin-bottom: 2.5rem;
+        }
+
+        .welcome-close {
+            background-color: #cd853f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .welcome-close:hover {
+            background-color: #8b4513;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <div class="welcome-modal">
+            <h1>Welcome to</h1>
+            <p>🌌 Negev of Jubilee 🌌</p>
+            <p style="font-size: 0.9rem; color: #704214;">A desert region of beauty, mystery, and ancient secrets</p>
+            <button class="welcome-close" onclick="closeWelcome()">Enter</button>
+        </div>
+    </div>
+
     <header>
         <h1>🏜️ Negev of Jubilee</h1>
         <p>A desert region of beauty, mystery, and ancient secrets</p>
@@ -200,5 +302,23 @@
     <footer>
         <p>&copy; 2026 Your D&D Campaign</p>
     </footer>
+
+    <script>
+        function closeWelcome() {
+            const overlay = document.getElementById('welcomeOverlay');
+            overlay.classList.add('hidden');
+            document.body.classList.remove('blurred');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('blurred');
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeWelcome();
+            }
+        });
+    </script>
 </body>
 </html>
