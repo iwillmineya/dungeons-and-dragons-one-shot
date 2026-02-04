@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Dragons - One Shot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #daa520;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #f0e68c;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #daa520;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #daa520;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #2a2a2a;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #daa520;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8b4513;
+            padding-bottom: 0.5rem;
+        }
+
+        .map-section {
+            background-color: #1f1f1f;
+            border: 3px dashed #daa520;
+            border-radius: 8px;
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: #888;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background-color: #333;
+            padding: 1.5rem;
+            border-left: 4px solid #daa520;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #daa520;
+            margin-top: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚔️ Dungeons & Dragons ⚔️</h1>
+        <p>One Shot Campaign</p>
+    </header>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#map">Map</a>
+        <a href="#characters">Characters</a>
+        <a href="#lore">Lore</a>
+    </nav>
+
+    <div class="container">
+        <section id="overview">
+            <h2>Campaign Overview</h2>
+            <p>Welcome to your Dungeons & Dragons one-shot adventure! This is your base of operations for managing your campaign details, locations, and characters.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎲 Status</h3>
+                    <p>Not Started</p>
+                </div>
+                <div class="info-card">
+                    <h3>🗺️ Setting</h3>
+                    <p>Add your campaign setting here</p>
+                </div>
+                <div class="info-card">
+                    <h3>👥 Players</h3>
+                    <p>0 adventurers</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏱️ Duration</h3>
+                    <p>One Session</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="map">
+            <h2>🗺️ Campaign Map</h2>
+            <div class="map-section">
+                <div class="map-placeholder">
+                    <img src="campaign-map.png" alt="Campaign Map" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <section id="characters">
+            <h2>👥 Characters & NPCs</h2>
+            <p>Add details about your player characters and important NPCs here.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Player Character 1</h3>
+                    <p>Add character details...</p>
+                </div>
+                <div class="info-card">
+                    <h3>Player Character 2</h3>
+                    <p>Add character details...</p>
+                </div>
+                <div class="info-card">
+                    <h3>Important NPC</h3>
+                    <p>Add NPC details...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lore">
+            <h2>📖 Campaign Lore</h2>
+            <p>Add your campaign backstory, plot hooks, and world details here. Set the stage for your adventures!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your D&D Campaign | May your rolls be ever in your favor!</p>
+    </footer>
+</body>
+</html>
