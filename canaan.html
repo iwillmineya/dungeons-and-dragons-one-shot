@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cana'an - D&D Campaign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b20 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #7cb342;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            color: #9ccc65;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #aed581;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #7cb342;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #7cb342;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #9ccc65;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #2a2a2a;
+            border: 2px solid #2d5016;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #7cb342;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #2d5016;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background-color: #333;
+            padding: 1.5rem;
+            border-left: 4px solid #7cb342;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: #9ccc65;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #7cb342;
+            margin-top: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌳 Cana'an</h1>
+        <p>A fertile land of abundance and prosperity</p>
+    </header>
+
+    <nav>
+        <a href="index.html">← Back to Map</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Description</h2>
+            <p>Cana'an is a verdant region blessed with natural resources and fertile soil. Vineyards, orchards, and farmland dominate the landscape, making it one of the wealthiest regions. The abundance draws traders, settlers, and those seeking a peaceful life away from conflict.</p>
+        </section>
+
+        <section>
+            <h2>Notable Locations</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Vineyard Terraces</h3>
+                    <p>Expansive vineyards producing fine wines renowned throughout the lands.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Harvest Town</h3>
+                    <p>A thriving community centered around agriculture and trade.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Orchard Valley</h3>
+                    <p>Scenic valleys filled with fruit trees and natural beauty.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>NPCs & Encounters</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Master Vintner</h3>
+                    <p>An expert in wine production, wielding influence through trade.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Farming Communities</h3>
+                    <p>Hardworking folk grateful for aid against bandits and hardship.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Merchant Traders</h3>
+                    <p>Buyers seeking the finest agricultural products.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adventure Hooks</h2>
+            <ul style="list-style-position: inside; color: #bbb;">
+                <li>Protect farms from raids and theft</li>
+                <li>Negotiate trade deals with distant merchants</li>
+                <li>Investigate mysterious crop diseases</li>
+                <li>Discover the truth behind agricultural sabotage</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⚔️ Who You're Going to Be Fighting</h2>
+            <div style="background-color: rgba(20, 20, 20, 0.8); padding: 1.5rem; border: 1px solid #2d5016; border-radius: 4px; margin-top: 1rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #9ccc65; margin-bottom: 0.5rem;">Enemy/Encounter 1</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+                <div>
+                    <h3 style="color: #9ccc65; margin-bottom: 0.5rem;">Enemy/Encounter 2</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your D&D Campaign</p>
+    </footer>
+</body>
+</html>

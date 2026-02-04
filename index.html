@@ -13,9 +13,27 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background-color: #0a0a0a;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231a0f2e;stop-opacity:1" /><stop offset="50%" style="stop-color:%230d0520;stop-opacity:1" /><stop offset="100%" style="stop-color:%23270d3f;stop-opacity:1" /></linearGradient><radialGradient id="skelGlow"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23654321;stop-opacity:0" /></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="1920" height="1080" fill="url(%23skyGrad)"/><ellipse cx="960" cy="800" rx="1200" ry="400" fill="black" opacity="0.5"/><g opacity="0.8" transform="translate(960, 350)"><ellipse cx="0" cy="0" rx="200" ry="240" fill="%23e8dcc8" stroke="%23654321" stroke-width="3"/><ellipse cx="-80" cy="-80" rx="45" ry="60" fill="%231a1a1a"/><ellipse cx="80" cy="-80" rx="45" ry="60" fill="%231a1a1a"/><circle cx="-70" cy="-75" r="18" fill="%23f0f0f0" opacity="0.8"/><circle cx="90" cy="-75" r="18" fill="%23f0f0f0" opacity="0.8"/><circle cx="-65" cy="-70" r="10" fill="%23000000"/><circle cx="95" cy="-70" r="10" fill="%23000000"/><path d="M -50 -20 L 50 -20" stroke="%23654321" stroke-width="2" fill="none"/><path d="M -40 20 L 40 20 Q 0 40 -40 20" stroke="%23654321" stroke-width="2" fill="none"/><line x1="-30" y1="30" x2="-30" y2="60" stroke="%23654321" stroke-width="1.5"/><line x1="0" y1="30" x2="0" y2="60" stroke="%23654321" stroke-width="1.5"/><line x1="30" y1="30" x2="30" y2="60" stroke="%23654321" stroke-width="1.5"/></g><g opacity="0.7" transform="translate(960, 550)"><path d="M -250 -100 L -150 50 L 150 50 L 250 -100 Q 0 -150 -250 -100" fill="%231a0f1f" stroke="%23654321" stroke-width="2"/><path d="M -200 -80 L -100 40 L 100 40 L 200 -80" fill="%232a1a3f" stroke="%238b5a2b" stroke-width="1.5" opacity="0.6"/><line x1="-180" y1="-60" x2="-180" y2="40" stroke="%23b8860b" stroke-width="2" opacity="0.4"/><line x1="0" y1="-80" x2="0" y2="50" stroke="%23b8860b" stroke-width="2" opacity="0.4"/><line x1="180" y1="-60" x2="180" y2="40" stroke="%23b8860b" stroke-width="2" opacity="0.4"/></g><g opacity="0.6"><path d="M 600 400 Q 500 500 450 700" stroke="%238b5a2b" stroke-width="60" fill="none" stroke-linecap="round"/><path d="M 1320 400 Q 1420 500 1470 700" stroke="%238b5a2b" stroke-width="60" fill="none" stroke-linecap="round"/></g><g opacity="0.3"><circle cx="300" cy="200" r="80" fill="%23b8860b"/><circle cx="1620" cy="300" r="100" fill="%234b0082"/><circle cx="960" cy="150" r="60" fill="%23daa520"/></g><g opacity="0.15"><polygon points="960,0 1200,300 960,600 720,300" fill="%23daa520"/><polygon points="500,500 700,400 600,600" fill="%23b8860b"/><polygon points="1420,500 1220,400 1320,600" fill="%234b0082"/></g><rect width="1920" height="1080" fill="black" opacity="0.2"/></svg>');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             color: #e8e8e8;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         header {
@@ -63,15 +81,20 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         section {
-            background-color: #2a2a2a;
+            background-color: rgba(42, 42, 42, 0.92);
             border: 2px solid #8b4513;
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 2;
         }
 
         section h2 {
@@ -165,7 +188,7 @@
 </head>
 <body>
     <header>
-        <h1>⚔️ Dungeons & Dragons ⚔️</h1>
+        <h1>⚔️ Pascha ⚔️</h1>
         <p>One Shot Campaign</p>
     </header>
 
@@ -209,6 +232,57 @@
             </div>
         </section>
 
+        <section id="locations">
+            <h2>🗺️ Locations</h2>
+            <p>Explore the major locations in your campaign world:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><a href="ashen-crown-mountains.html" style="color: #ffd700; text-decoration: none;">⛰️ Ashen Crown Mountains</a></h3>
+                    <p>Towering peaks shrouded in mist and ancient magic</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="highlands-of-ephrah.html" style="color: #ffd700; text-decoration: none;">🏔️ Highlands of Ephrah</a></h3>
+                    <p>Rolling hills and ancient temples of a lost civilization</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="mourning-woods.html" style="color: #ffd700; text-decoration: none;">🌲 Mourning Woods</a></h3>
+                    <p>A dark forest shrouded in sorrow and mystery</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="migdal-or.html" style="color: #ffd700; text-decoration: none;">🏛️ Migdal-Or</a></h3>
+                    <p>A fortress city of stone and strength</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="beyt-charith.html" style="color: #00ff00; text-decoration: none;">🏰 Beyt Charith</a></h3>
+                    <p>A merchant city nestled in fertile valleys - <strong style="color: #00ff00;">★ STARTER LOCATION ★</strong></p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="negev-of-jubilee.html" style="color: #ffd700; text-decoration: none;">🏜️ Negev of Jubilee</a></h3>
+                    <p>A desert region of beauty, mystery, and ancient secrets</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="lake-lumen.html" style="color: #ffd700; text-decoration: none;">💎 Lake Lumen</a></h3>
+                    <p>A crystalline lake of magical beauty and power</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="canaan.html" style="color: #ffd700; text-decoration: none;">🌳 Cana'an</a></h3>
+                    <p>A fertile land of abundance and prosperity</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="joppael.html" style="color: #ffd700; text-decoration: none;">⛵ Joppael</a></h3>
+                    <p>A coastal city of seafaring tradition and maritime commerce</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="great-sea-of-tarshish.html" style="color: #ffd700; text-decoration: none;">🌊 Great Sea of Tarshish</a></h3>
+                    <p>A vast ocean of mystery, danger, and adventure</p>
+                </div>
+                <div class="info-card">
+                    <h3><a href="fugue-plane.html" style="color: #ff1493; text-decoration: none;">💀 Fugue Plane (Death)</a></h3>
+                    <p>The realm between life and the afterlife, domain of Kelemvor</p>
+                </div>
+            </div>
+        </section>
+
         <section id="characters">
             <h2>👥 Characters & NPCs</h2>
             <p>Add details about your player characters and important NPCs here.</p>
@@ -235,7 +309,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Your D&D Campaign | May your rolls be ever in your favor!</p>
+        <p>&copy; 2026 Tylers D&D Campaign | May your rolls be ever in your favor!</p>
     </footer>
 </body>
 </html>

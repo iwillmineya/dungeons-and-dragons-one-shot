@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Lumen - D&D Campaign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2b8fa3 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #20b2aa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            color: #5fd3d3;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #8dd9d9;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #20b2aa;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #20b2aa;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #5fd3d3;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #2a2a2a;
+            border: 2px solid #1a5f7a;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #20b2aa;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #1a5f7a;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background-color: #333;
+            padding: 1.5rem;
+            border-left: 4px solid #20b2aa;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: #5fd3d3;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #20b2aa;
+            margin-top: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💎 Lake Lumen</h1>
+        <p>A crystalline lake of magical beauty and power</p>
+    </header>
+
+    <nav>
+        <a href="index.html">← Back to Map</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Description</h2>
+            <p>Lake Lumen is a breathtaking body of water known for its crystal-clear waters that seem to glow with inner light. The lake is surrounded by natural beauty and is said to have magical properties. It attracts scholars, mystics, and adventurers seeking answers and power.</p>
+        </section>
+
+        <section>
+            <h2>Notable Locations</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Luminous Waters</h3>
+                    <p>The lake itself, shimmering with an otherworldly glow at night.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Sacred Temple</h3>
+                    <p>An ancient structure dedicated to the lake's mystical properties.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Hermit's Isle</h3>
+                    <p>A small island in the center of the lake, home to a mysterious sage.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>NPCs & Encounters</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Mystical Sage</h3>
+                    <p>An ancient being rumored to live on the island, possessing great wisdom.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Water Priestess</h3>
+                    <p>Tends to the temple and communes with the lake's spiritual essence.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Lake Creatures</h3>
+                    <p>Magical beings dwelling in the depths, some helpful, some dangerous.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adventure Hooks</h2>
+            <ul style="list-style-position: inside; color: #bbb;">
+                <li>Seek the wisdom of the mysterious sage</li>
+                <li>Investigate strange phenomena in the lake</li>
+                <li>Retrieve magical artifacts from the lake's depths</li>
+                <li>Protect the lake from those who would exploit it</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⚔️ Who You're Going to Be Fighting</h2>
+            <div style="background-color: rgba(20, 20, 20, 0.8); padding: 1.5rem; border: 1px solid #1a5f7a; border-radius: 4px; margin-top: 1rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #5fd3d3; margin-bottom: 0.5rem;">Enemy/Encounter 1</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+                <div>
+                    <h3 style="color: #5fd3d3; margin-bottom: 0.5rem;">Enemy/Encounter 2</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your D&D Campaign</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fugue Plane (Death) - D&D Campaign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 30%, #2d1b4e 60%, #1a0f2e 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a0a1a 0%, #3d0d3d 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #8b008b;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0.5rem;
+            color: #ff1493;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #da70d6;
+        }
+
+        nav {
+            background-color: #0a0a0a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #8b008b;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #8b008b;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff1493;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            background-color: rgba(20, 0, 20, 0.95);
+            border: 3px solid #8b008b;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8b008b;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background-color: rgba(30, 0, 30, 0.8);
+            padding: 1.5rem;
+            border-left: 4px solid #8b008b;
+            border-radius: 4px;
+            border: 1px solid #4b0082;
+        }
+
+        .info-card h3 {
+            color: #ff1493;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #8b008b;
+            margin-top: 3rem;
+            color: #888;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💀 Fugue Plane (Death)</h1>
+        <p>The realm between life and the afterlife</p>
+    </header>
+
+    <nav>
+        <a href="index.html">← Back to Map</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Description</h2>
+            <p>The Fugue Plane is a desolate, gray expanse suspended between the material world and the outer planes. It is the destination of mortal souls upon death, where they are sorted by psychopomps and sent to their final destinations based on their lives and beliefs. This plane is shrouded in mystery, despair, and the weight of countless souls.</p>
+        </section>
+
+        <section>
+            <h2>Notable Locations</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>The Gray Wastes</h3>
+                    <p>An endless, barren landscape where lost souls wander in confusion and despair.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Kelemvor's Throne</h3>
+                    <p>The seat of divine judgment where the god of death determines souls' final fates.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Gates to Beyond</h3>
+                    <p>Mystical portals leading to the various afterlife realms and outer planes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>NPCs & Encounters</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Kelemvor</h3>
+                    <p>The god of death itself, judge and custodian of souls. Few mortals encounter him and live.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Psychopomps</h3>
+                    <p>Celestial servants who guide souls and enforce Kelemvor's will on this plane.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Lost Souls</h3>
+                    <p>Spirits trapped between worlds, sometimes dangerous, often tragic.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adventure Hooks</h2>
+            <ul style="list-style-position: inside; color: #bbb;">
+                <li>Journey to this plane to recover a stolen soul</li>
+                <li>Negotiate with Kelemvor himself for a life owed</li>
+                <li>Guide a wrongly judged spirit to its proper destination</li>
+                <li>Stop a soul thief operating between worlds</li>
+                <li>Escape the Fugue Plane after an unexpected death</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Characteristics</h2>
+            <p><strong>Appearance:</strong> A desolate realm of gray stone and mist, devoid of color and life. The sky is perpetually overcast, and the ground extends infinitely in all directions.</p>
+            <p style="margin-top: 1rem;"><strong>Danger Level:</strong> EXTREME - This plane is the domain of death itself. Only the most powerful or divinely protected can survive here without being claimed.</p>
+            <p style="margin-top: 1rem;"><strong>Notable Features:</strong> No living creatures naturally inhabit this plane. Death magic is amplified. Resurrection magic is significantly weakened.</p>
+        </section>
+
+        <section>
+            <h2>⚔️ Who You're Going to Be Fighting</h2>
+            <div style="background-color: rgba(20, 0, 20, 0.8); padding: 1.5rem; border: 1px solid #8b008b; border-radius: 4px; margin-top: 1rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #ff1493; margin-bottom: 0.5rem;">Enemy/Encounter 1</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> Kelemvor</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+                <div>
+                    <h3 style="color: #ff1493; margin-bottom: 0.5rem;">Enemy/Encounter 2</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your D&D Campaign | Enter with caution...</p>
+    </footer>
+</body>
+</html>

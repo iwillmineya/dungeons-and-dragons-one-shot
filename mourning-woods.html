@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mourning Woods - D&D Campaign</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b20 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #4a7c3a;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            color: #8fbc8f;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #a9d5a9;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 2px solid #4a7c3a;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #4a7c3a;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #8fbc8f;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #2a2a2a;
+            border: 2px solid #2d5016;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #4a7c3a;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #2d5016;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background-color: #333;
+            padding: 1.5rem;
+            border-left: 4px solid #4a7c3a;
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            color: #8fbc8f;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 2px solid #4a7c3a;
+            margin-top: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌲 Mourning Woods</h1>
+        <p>A dark forest shrouded in sorrow and mystery</p>
+    </header>
+
+    <nav>
+        <a href="index.html">← Back to Map</a>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Description</h2>
+            <p>The Mourning Woods are a dense, ancient forest where sunlight struggles to penetrate the thick canopy. The woods earned their name from the sorrowful history that haunts them—a tragedy that transpired centuries ago. The forest is both beautiful and foreboding, filled with wildlife and magical creatures.</p>
+        </section>
+
+        <section>
+            <h2>Notable Locations</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Old Growth Forest</h3>
+                    <p>Trees so ancient they predate recorded history, creating a cathedral of wood and shadow.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Haunted Clearing</h3>
+                    <p>A mysterious clearing where strange phenomena occur at night.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Ranger Settlement</h3>
+                    <p>A hidden community of rangers and druids living in harmony with the forest.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>NPCs & Encounters</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Forest Spirits</h3>
+                    <p>Ethereal beings connected to the forest's ancient sorrow and tragedy.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Ranger Warden</h3>
+                    <p>Protects the forest and its inhabitants from those who would do harm.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Dangerous Beasts</h3>
+                    <p>Large predators and magical creatures roam the deep woods.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Adventure Hooks</h2>
+            <ul style="list-style-position: inside; color: #bbb;">
+                <li>Discover the truth behind the forest's tragic history</li>
+                <li>Rescue missing travelers lost in the woods</li>
+                <li>Investigate supernatural disturbances in the forest</li>
+                <li>Help the ranger settlement defend against poachers</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⚔️ Who You're Going to Be Fighting</h2>
+            <div style="background-color: rgba(20, 20, 20, 0.8); padding: 1.5rem; border: 1px solid #2d5016; border-radius: 4px; margin-top: 1rem;">
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #8fbc8f; margin-bottom: 0.5rem;">Enemy/Encounter 1</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+                <div>
+                    <h3 style="color: #8fbc8f; margin-bottom: 0.5rem;">Enemy/Encounter 2</h3>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Type:</strong> [Add creature type]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>CR:</strong> [Add challenge rating]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>HP:</strong> [Add hit points]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>AC:</strong> [Add armor class]</p>
+                    <p style="color: #bbb; font-size: 0.9rem;"><strong>Abilities:</strong> [Add special abilities]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your D&D Campaign</p>
+    </footer>
+</body>
+</html>
