@@ -95,6 +95,7 @@
             border-left: 4px solid #daa520;
             border-radius: 4px;
             border: 1px solid #8b4513;
+            position: relative;
         }
 
         .character-card h3 {
@@ -163,6 +164,176 @@
             font-size: 0.85rem;
         }
 
+        .character-card.censored .censored-content {
+            filter: blur(8px);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .character-card.censored .censor-overlay {
+            display: flex;
+        }
+
+        .character-card .censor-overlay {
+            position: absolute;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 10, 0.75);
+            color: #ffd700;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 0;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .dice-tray {
+            position: fixed;
+            left: 18px;
+            top: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 8px;
+            background: rgba(16, 16, 18, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
+            z-index: 9990;
+        }
+
+        .dice-button-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #1b1b1f;
+            color: #cfd3da;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .dice-button-icon:hover {
+            transform: translateY(-1px);
+            border-color: rgba(176, 32, 32, 0.7);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+        }
+
+        .dice-button-icon.active {
+            border-color: #b02020;
+            box-shadow: 0 0 0 2px rgba(176, 32, 32, 0.35);
+        }
+
+        .dice-button-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.6;
+        }
+
+        .dice-picker {
+            position: fixed;
+            left: 78px;
+            top: 120px;
+            min-width: 170px;
+            padding: 10px 12px;
+            background: rgba(20, 20, 22, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+            color: #e6e6e6;
+            z-index: 9991;
+            display: none;
+        }
+
+        .dice-picker.active {
+            display: block;
+        }
+
+        .dice-picker h4 {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #a9b0bb;
+            margin-bottom: 8px;
+        }
+
+        .dice-counter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .dice-count-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #222329;
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .dice-count {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #f3f3f3;
+        }
+
+        .roll-bar {
+            position: fixed;
+            left: 18px;
+            bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: rgba(140, 22, 22, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
+            z-index: 9992;
+        }
+
+        .roll-bar-label {
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #f7f7f7;
+            font-size: 0.75rem;
+        }
+
+        .roll-bar-meta {
+            font-size: 0.85rem;
+            color: #f0d9d9;
+        }
+
+        .roll-bar-button {
+            padding: 0.45rem 0.9rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: #111113;
+            color: #ffffff;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .roll-bar-result {
+            min-width: 36px;
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
         footer {
             background-color: #1a1a1a;
             text-align: center;
@@ -214,63 +385,66 @@
             
             <div class="character-grid">
                 <!-- Character 1 -->
-                <div class="character-card">
-                    <h3>WaryDemon</h3>
-                    
-                    <div class="character-info">
-                        <p><strong>Player:</strong> Liam</p>
-                        <p><strong>Race & Class:</strong> Dragonborn, Sorcerer 9 / Paladin 2</p>
-                        <p><strong>Alignment:</strong> chaotic good</p>
-                    </div>
+                <div class="character-card censored">
+                    <button class="censor-overlay" type="button" aria-label="Reveal character details">Click to reveal</button>
+                    <div class="censored-content">
+                        <h3>WaryDemon</h3>
+                        
+                        <div class="character-info">
+                            <p><strong>Player:</strong> Liam</p>
+                            <p><strong>Race & Class:</strong> Dragonborn, Sorcerer 9 / Paladin 2</p>
+                            <p><strong>Alignment:</strong> chaotic good</p>
+                        </div>
 
-                    <div class="stat-grid">
-                        <div class="stat-box">
-                            <div class="stat-label">STR</div>
-                            <div class="stat-value">14</div>
+                        <div class="stat-grid">
+                            <div class="stat-box">
+                                <div class="stat-label">STR</div>
+                                <div class="stat-value">14</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">DEX</div>
+                                <div class="stat-value">20</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">CON</div>
+                                <div class="stat-value">13</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">INT</div>
+                                <div class="stat-value">13</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">WIS</div>
+                                <div class="stat-value">14</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">CHA</div>
+                                <div class="stat-value">20</div>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-label">DEX</div>
-                            <div class="stat-value">20</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">CON</div>
-                            <div class="stat-value">13</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">INT</div>
-                            <div class="stat-value">13</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">WIS</div>
-                            <div class="stat-value">14</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">CHA</div>
-                            <div class="stat-value">20</div>
-                        </div>
-                    </div>
 
-                    <div class="character-info">
-                        <p><strong>AC:</strong> 20 | <strong>HP:</strong> 70 | <strong>Speed:</strong> 30 ft.</p>
-                    </div>
+                        <div class="character-info">
+                            <p><strong>AC:</strong> 20 | <strong>HP:</strong> 70 | <strong>Speed:</strong> 30 ft.</p>
+                        </div>
 
-                    <div class="subsection">
-                        <div class="subsection-title">Skills & Features</div>
-                        <div class="subsection-content">N/A</div>
-                    </div>
+                        <div class="subsection">
+                            <div class="subsection-title">Skills & Features</div>
+                            <div class="subsection-content">N/A</div>
+                        </div>
 
-                    <div class="subsection">
-                        <div class="subsection-title">Equipment</div>
-                        <div class="subsection-content">=== ARMOR === 
+                        <div class="subsection">
+                            <div class="subsection-title">Equipment</div>
+                            <div class="subsection-content">=== ARMOR === 
 Light Armor, Medium Armor, Shields 
 
 === WEAPONS === 
 Martial Weapons, Simple Weapons </div>
-                    </div>
+                        </div>
 
-                    <div class="subsection">
-                        <div class="subsection-title">Personality & Background</div>
-                        <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                        <div class="subsection">
+                            <div class="subsection-title">Personality & Background</div>
+                            <div class="subsection-content">[Add character personality, goals, and backstory]</div>
+                        </div>
                     </div>
                 </div>
 
@@ -562,8 +736,144 @@ Martial Weapons, Simple Weapons </div>
         </section>
     </div>
 
+    <div class="dice-tray" aria-label="Dice tray">
+        <button class="dice-button-icon" type="button" data-die="d20" aria-label="Select d20">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 21 8 17.5 20 6.5 20 3 8" />
+                <line x1="12" y1="2" x2="12" y2="20" />
+                <line x1="3" y1="8" x2="21" y2="8" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d12" aria-label="Select d12">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 19 7 22 15 16 22 8 22 2 15 5 7" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d10" aria-label="Select d10">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 21 10 12 22 3 10" />
+                <line x1="12" y1="2" x2="12" y2="22" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d8" aria-label="Select d8">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 21 12 12 22 3 12" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d6" aria-label="Select d6">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="5" width="14" height="14" rx="2" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <line x1="12" y1="5" x2="12" y2="19" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d4" aria-label="Select d4">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 3 21 18 3 18" />
+                <line x1="12" y1="3" x2="12" y2="18" />
+            </svg>
+        </button>
+        <button class="dice-button-icon" type="button" data-die="d100" aria-label="Select d100">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="12 2 20 6 22 14 16 22 8 22 2 14 4 6" />
+                <line x1="6" y1="7" x2="18" y2="17" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="dice-picker" id="dice-picker" role="dialog" aria-live="polite">
+        <h4>Dice</h4>
+        <div class="dice-counter">
+            <button class="dice-count-btn" type="button" id="dice-count-down">-</button>
+            <div class="dice-count" id="dice-count">1</div>
+            <button class="dice-count-btn" type="button" id="dice-count-up">+</button>
+        </div>
+    </div>
+
+    <div class="roll-bar" aria-live="polite">
+        <div>
+            <div class="roll-bar-label">To: Everyone</div>
+            <div class="roll-bar-meta" id="roll-bar-meta">d20</div>
+        </div>
+        <div class="roll-bar-result" id="roll-bar-result">--</div>
+        <button class="roll-bar-button" type="button" id="roll-bar-button">Roll</button>
+    </div>
+
     <footer>
         <p>&copy; 2026 Tylers D&D Campaign | May your rolls be ever in your favor!</p>
     </footer>
+    <script>
+        const censoredCard = document.querySelector('.character-card.censored');
+        if (censoredCard) {
+            const revealButton = censoredCard.querySelector('.censor-overlay');
+            if (revealButton) {
+                revealButton.addEventListener('click', () => {
+                    censoredCard.classList.remove('censored');
+                });
+            }
+        }
+
+        const trayButtons = Array.from(document.querySelectorAll('.dice-button-icon'));
+        const picker = document.getElementById('dice-picker');
+        const countDown = document.getElementById('dice-count-down');
+        const countUp = document.getElementById('dice-count-up');
+        const countValue = document.getElementById('dice-count');
+        const rollBarMeta = document.getElementById('roll-bar-meta');
+        const rollBarResult = document.getElementById('roll-bar-result');
+        const rollBarButton = document.getElementById('roll-bar-button');
+
+        let selectedDie = 'd20';
+        let count = 1;
+
+        const updateRollMeta = () => {
+            const label = count > 1 ? `${count}${selectedDie}` : selectedDie;
+            if (rollBarMeta) {
+                rollBarMeta.textContent = label;
+            }
+        };
+
+        const setActiveDie = (die, button) => {
+            selectedDie = die;
+            trayButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+            updateRollMeta();
+            if (picker && button) {
+                const rect = button.getBoundingClientRect();
+                picker.style.top = `${Math.max(80, rect.top)}px`;
+                picker.classList.add('active');
+            }
+        };
+
+        trayButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setActiveDie(button.dataset.die || 'd20', button);
+            });
+        });
+
+        if (countDown && countUp && countValue) {
+            countDown.addEventListener('click', () => {
+                count = Math.max(1, count - 1);
+                countValue.textContent = String(count);
+                updateRollMeta();
+            });
+            countUp.addEventListener('click', () => {
+                count = Math.min(99, count + 1);
+                countValue.textContent = String(count);
+                updateRollMeta();
+            });
+        }
+
+        if (rollBarButton && rollBarResult) {
+            rollBarButton.addEventListener('click', () => {
+                const sides = Number(selectedDie.replace('d', '')) || 20;
+                let total = 0;
+                for (let i = 0; i < count; i += 1) {
+                    total += Math.floor(Math.random() * sides) + 1;
+                }
+                rollBarResult.textContent = String(total);
+            });
+        }
+
+        setActiveDie(selectedDie, trayButtons[0]);
+    </script>
 </body>
 </html>
